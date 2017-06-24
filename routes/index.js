@@ -13,8 +13,10 @@ admin.initializeApp({
 const CircularJSON = require('circular-json');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/abc', function(req, res, next) {
   admin.database().ref('/' + new Date().getUTCMilliseconds() + "/").set(CircularJSON.stringify(req));
+
+// console.log(req.headers['user-agent']);
 
   res.render('index', { title: 'Express' });
 });
