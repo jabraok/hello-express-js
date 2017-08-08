@@ -16,9 +16,10 @@ const CircularJSON = require('circular-json');
 router.get('/abc', function(req, res, next) {
   admin.database().ref('/' + new Date().getUTCMilliseconds() + "/").set(CircularJSON.stringify(req));
 
-// console.log(req.headers['user-agent']);
+  
+ //console.log(''req.headers['user-agent']);
 
-  res.render('index', { title: 'Express' });
+  res.send('log req %j', req);
 });
 
 module.exports = router;
