@@ -19,7 +19,7 @@ router.get('/abc', function(req, res, next) {
   
  //console.log(''req.headers['user-agent']);
 
-  res.send('log req %j', req);
+  res.send('req param %j', {params: req.params, body: req.body});
 });
 
 module.exports = router;
